@@ -38,3 +38,12 @@ jobs:
       # - run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
       - name: 执行 Lint
         run: yarn lint
+      - name: 测试
+        run: yarn test:cov
+      - name: 构建
+        run: yarn build:dist
+
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
