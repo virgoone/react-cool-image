@@ -36,6 +36,6 @@ jobs:
         run: yarn build:dist
       # - run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
       - name: 发布
-        run: npm publish --access .build
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

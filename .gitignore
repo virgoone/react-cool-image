@@ -3,7 +3,7 @@
 
 node_modules
 .dev
-.build
+build
 dist
 coverage
 .stats.json

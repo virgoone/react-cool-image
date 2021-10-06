@@ -88,7 +88,7 @@ const plugins = [
     }),
   isDemo &&
     copy({
-      targets: [{ src: '.dev', dest: '.', rename: '.build' }],
+      targets: [{ src: '.dev', dest: '.', rename: 'build' }],
       hook: 'writeBundle',
     }),
   isDist &&
