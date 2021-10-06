@@ -33,7 +33,7 @@ jobs:
       - name: 测试
         run: yarn test
       - name: 构建
-        run: yarn build
+        run: yarn build:dist
       # - run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
       - name: 发布
         run: npm publish --access .build
