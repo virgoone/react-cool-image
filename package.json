@@ -40,7 +40,7 @@
     "test:update": "yarn test -u",
     "clean": "concurrently yarn:clean:*",
     "clean:dev": "rimraf .dev",
-    "clean:demo": "rimraf .build",
+    "clean:demo": "rimraf build",
     "clean:dist": "rimraf dist .stats.json",
     "clean:cov": "rimraf coverage",
     "release": "release-it",
