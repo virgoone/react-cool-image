@@ -12,6 +12,7 @@ declare module 'react-cool-image' {
       HTMLImageElement
     > {
     src: string
+    placeholder?: string
     className?: string
     width?: number
     height?: number
