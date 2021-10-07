@@ -1,3 +1,15 @@
+# [0.2.0](https://github.com/virgoone/react-cool-image/compare/0.1.0...0.2.0) (2021-10-07)
+
+### Bug Fixes
+
+- 修改 github workflow 不能触发问题 ([6a00c7c](https://github.com/virgoone/react-cool-image/commit/6a00c7c695e2b55991c228e36ca237fc519c5626))
+- netlify deploy error ([36777d6](https://github.com/virgoone/react-cool-image/commit/36777d621cf7253a244616572e643cc97c5da9b9))
+- types update ([b7306e4](https://github.com/virgoone/react-cool-image/commit/b7306e4f71172259a8b8a63fc540f27359103c6f))
+
+### Features
+
+- 增加 netlify actions ([6db7cb0](https://github.com/virgoone/react-cool-image/commit/6db7cb031907e63ba60eaec830636f0c63a89b37))
+
 # [0.1.0](https://github.com/virgoone/react-cool-image/compare/0.0.2-0...0.1.0) (2021-10-05)
 
 ### Bug Fixes
