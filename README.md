@@ -40,7 +40,7 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 | `format`        | boolean           | true    | 是否使用 **CDN** 格式化                                                                                                                                      |
 | `width`         | number            |         | 宽度 单位 **px**                                                                                                                                             |
 | `height`        | number            |         | 高度，单位 **px**                                                                                                                                            |
-| `lazy`          | boolean \| string | `true`  | Turn on/off lazy loading. <br />目前可选值`boolean`                                                                                                          |
+| `lazy`          | boolean \| string | `true`  | Turn on/off lazy loading. <br />目前可选值 `boolean` ｜`thumb`                                                                                               |
 | observerOptions | object            | `{}`    | See the [ObserverOptions](#observerOptions) section.                                                                                                         |
 | `...`           |                   |         | Find more [props](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes) and [events](https://reactjs.org/docs/events.html#image-events). |
 
