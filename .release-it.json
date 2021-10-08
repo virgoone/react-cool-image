@@ -1,9 +1,17 @@
 {
   "git": {
-    "commitMessage": "chore: release v${version}"
+    "commitMessage": "chore: release v${version}",
+    "tagName": "v${version}",
+    "tagAnnotation": "chore: release v${version}"
+  },
+  "npm": {
+    "publish": false
   },
   "github": {
     "release": true
+  },
+  "gitlab": {
+    "release": false
   },
   "plugins": {
     "@release-it/conventional-changelog": {
