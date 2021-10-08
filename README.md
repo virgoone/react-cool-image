@@ -57,9 +57,9 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 
 ```json
 {
-  rootMargin: 20px,
-  unobserveOnEnter: true
+  "rootMargin": "20px",
+  "unobserveOnEnter": true
 }
 ```
 
-其他参数参考：[`react-cool-inview`](https://github.com/wellyshen/react-cool-inview#api)
+其他参数参考：[`react-cool-inview API`](https://github.com/wellyshen/react-cool-inview#api)
