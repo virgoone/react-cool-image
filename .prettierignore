@@ -1,6 +1,7 @@
 *.log
-demo/.dev
+.dev
 public
 dist
+build
 coverage
 .size-snapshot.json
