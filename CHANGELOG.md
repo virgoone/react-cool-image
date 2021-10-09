@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/virgoone/react-cool-image/compare/0.2.0...v0.2.2) (2021-10-09)
+
+### Bug Fixes
+
+- 修复发布 workflow ([5057714](https://github.com/virgoone/react-cool-image/commit/5057714347c72e2d7dfa71ee527886820ff853ac))
+- 修改 readme 和 lint 执行顺序 ([95c5852](https://github.com/virgoone/react-cool-image/commit/95c58521d4f591c984b4f0808262a20c484cf935))
+- 修改提交配置 ([57fc9c6](https://github.com/virgoone/react-cool-image/commit/57fc9c6fdfea6fdb235cbeac9c4c2fd2acd3c5ba))
+- release it config ([917b479](https://github.com/virgoone/react-cool-image/commit/917b4797b52e2af994681d80f97f6cccb0d1ef59))
+
 ## [0.2.1](https://github.com/virgoone/react-cool-image/compare/0.2.0...v0.2.1) (2021-10-08)
 
 ### Bug Fixes
