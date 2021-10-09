@@ -31,7 +31,7 @@
     "build:dist": "yarn clean:dist && BABEL_ENV=dist rollup -c rollup/config.js --environment BUILD:dist",
     "lint": "concurrently yarn:lint:*",
     "lint:type": "tsc",
-    "lint:format": "prettier -w . -u --loglevel silent",
+    "lint:format": "prettier -w . -u",
     "lint:code": "eslint --fix . --ext .js,.ts,.tsx",
     "lint:style": "stylelint --fix \"**/*.{css,ts,tsx}\"",
     "test": "jest",
