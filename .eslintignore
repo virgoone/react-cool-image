@@ -1,2 +1,7 @@
 public
 dist
+*.log
+.dev
+public
+build
+coverage

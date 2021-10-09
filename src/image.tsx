@@ -4,21 +4,22 @@ import {
   useEffect,
   forwardRef,
   useRef,
+  CSSProperties,
 } from 'react'
 import useInView from 'react-cool-inview'
-import { cx } from '@emotion/css'
 import Imager from './imager'
 import { ImageProps } from './types'
 import { supportsWebp, processImageFormat } from './utils'
-import {
-  image as imageStyled,
-  placeholder as placeholderStyled,
-  thumbnail as thumbnailStyled,
-  loaded as loadedStyled,
-} from './style'
 
 const DEFAULT_SRC =
   'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+const baseImageStyle = {
+  width: '100%',
+  display: 'block',
+  transition: 'opacity 1s linear',
+  '-webkit-transition': 'opacity 1s linear',
+} as CSSProperties
+
 const Image = forwardRef((props: ImageProps, ref) => {
   const {
     width,
@@ -99,27 +100,49 @@ const Image = forwardRef((props: ImageProps, ref) => {
 
   const filling = !!(width && height)
   const style = filling ? { paddingTop: `${(height / width) * 100}%` } : {}
+  const imageStyle: CSSProperties = filling
+    ? { position: 'absolute', left: 0, top: 0 }
+    : { position: 'static' }
 
   return (
     <div
-      className={cx(
-        imageStyled,
-        className,
-        filling && placeholderStyled,
-        loaded && loadedStyled,
-      )}
+      className={className}
       data-loaded={loaded}
-      style={style}
+      style={{
+        position: 'relative',
+        backgroundColor: 'transparent',
+        overflow: 'hidden',
+        ...style,
+      }}
       ref={setRef}
     >
       {thumbnail && (
         <img
-          className={thumbnailStyled}
+          style={
+            {
+              ...baseImageStyle,
+              ...imageStyle,
+              '-webkit-filter': 'blur(20px)',
+              filter: 'blur(20px)',
+              opacity: loaded ? 0 : 1,
+            } as CSSProperties
+          }
           crossOrigin={crossOrigin}
           src={thumbnail}
         />
       )}
-      <img crossOrigin={crossOrigin} src={source} {...rest} />
+      <img
+        crossOrigin={crossOrigin}
+        src={source}
+        style={
+          {
+            ...baseImageStyle,
+            ...imageStyle,
+            opacity: loaded ? 1 : 0,
+          } as CSSProperties
+        }
+        {...rest}
+      />
     </div>
   )
 })
