@@ -93,6 +93,12 @@ const Image = forwardRef((props: ImageProps, ref) => {
 
   const filling = !!(width && height)
   const style = filling ? { paddingTop: `${(height / width) * 100}%` } : {}
+  const baseImageStyle = {
+    width: '100%',
+    display: 'block',
+    transition: 'opacity 1s linear',
+    '-webkit-transition': 'opacity 1s linear',
+  } as CSSProperties
   const imageStyle: CSSProperties = filling
     ? { position: 'absolute', left: 0, top: 0 }
     : { position: 'static' }
@@ -113,6 +119,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
         <img
           style={
             {
+              ...baseImageStyle,
               '-webkit-filter': 'blur(20px)',
               filter: 'blur(20px)',
               opacity: 1,
@@ -127,12 +134,9 @@ const Image = forwardRef((props: ImageProps, ref) => {
         src={source}
         style={
           {
-            width: '100%',
-            display: 'block',
-            opacity: loaded ? 1 : 0,
-            transition: 'opacity 1s linear',
-            '-webkit-transition': 'opacity 1s linear',
+            ...baseImageStyle,
             ...imageStyle,
+            opacity: loaded ? 1 : 0,
           } as CSSProperties
         }
         {...rest}
