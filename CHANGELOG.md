@@ -1,3 +1,5 @@
+## [0.2.3](https://github.com/virgoone/react-cool-image/compare/v0.2.2...v0.2.3) (2021-10-09)
+
 ## [0.2.2](https://github.com/virgoone/react-cool-image/compare/0.2.0...v0.2.2) (2021-10-09)
 
 ### Bug Fixes
