@@ -3,7 +3,7 @@ declare module 'react-cool-image' {
     DetailedHTMLProps,
     ImgHTMLAttributes,
     SyntheticEvent,
-    ForwardRefExoticComponent
+    ForwardRefExoticComponent,
   } from 'react'
 
   export interface Format {
@@ -36,13 +36,13 @@ declare module 'react-cool-image' {
   export const Image: ForwardRefExoticComponent<ImageProps>
 
   export const supportsWebp: (
-    callback: (support?: boolean | undefined) => void
+    callback: (support?: boolean | undefined) => void,
   ) => void
 
   export const processImageFormat: (
     src: string,
     webp?: boolean,
-    format?: boolean | Format
+    format?: boolean | Format,
   ) => [string, string]
 
   export default Image

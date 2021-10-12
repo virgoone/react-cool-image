@@ -4,7 +4,7 @@ import {
   useEffect,
   forwardRef,
   useRef,
-  CSSProperties
+  CSSProperties,
 } from 'react'
 import useInView from 'react-cool-inview'
 import Imager from './imager'
@@ -18,7 +18,7 @@ const baseImageStyle = {
   width: '100%',
   display: 'block',
   transition: 'opacity 1s linear',
-  '-webkit-transition': 'opacity 1s linear'
+  '-webkit-transition': 'opacity 1s linear',
 } as CSSProperties
 
 const Image = forwardRef((props: ImageProps, ref) => {
@@ -48,7 +48,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
   const { observe, inView } = useInView<HTMLDivElement>({
     rootMargin: '20px',
     unobserveOnEnter: true,
-    ...observerOptions
+    ...observerOptions,
   })
 
   const setRef = (el: HTMLImageElement) => {
@@ -82,7 +82,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
           () => {
             setThumbnail(thumbSource)
           },
-          crossOrigin
+          crossOrigin,
         )
       }
 
@@ -99,7 +99,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
           sourceRef.current = src
           if (onLoadRef.current) onLoadRef.current(e)
         },
-        crossOrigin
+        crossOrigin,
       )
     })
 
@@ -132,7 +132,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
         position: 'relative',
         backgroundColor: 'transparent',
         overflow: 'hidden',
-        ...style
+        ...style,
       }}
       ref={setRef}
     >
@@ -144,7 +144,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
               ...imageStyle,
               '-webkit-filter': 'blur(20px)',
               filter: 'blur(20px)',
-              opacity: loaded ? 0 : 1
+              opacity: loaded ? 0 : 1,
             } as CSSProperties
           }
           crossOrigin={crossOrigin}
@@ -158,7 +158,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
           {
             ...baseImageStyle,
             ...imageStyle,
-            opacity: loaded ? 1 : 0
+            opacity: loaded ? 1 : 0,
           } as CSSProperties
         }
         {...rest}

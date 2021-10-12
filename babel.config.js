@@ -5,11 +5,11 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        loose: true
-      }
+        loose: true,
+      },
     ],
     '@babel/preset-typescript',
-    '@babel/preset-react'
+    '@babel/preset-react',
   ]
   const plugins = []
   return {
@@ -17,8 +17,8 @@ module.exports = function (api) {
     plugins,
     env: {
       development: {
-        plugins: ['@emotion']
-      }
-    }
+        plugins: ['@emotion'],
+      },
+    },
   }
 }
