@@ -4,12 +4,13 @@ import {
   useEffect,
   forwardRef,
   useRef,
-  CSSProperties,
+  CSSProperties
 } from 'react'
 import useInView from 'react-cool-inview'
 import Imager from './imager'
 import { ImageProps } from './types'
 import { supportsWebp, processImageFormat } from './utils'
+import useLatest from './useLatest'
 
 const DEFAULT_SRC =
   'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
@@ -17,7 +18,7 @@ const baseImageStyle = {
   width: '100%',
   display: 'block',
   transition: 'opacity 1s linear',
-  '-webkit-transition': 'opacity 1s linear',
+  '-webkit-transition': 'opacity 1s linear'
 } as CSSProperties
 
 const Image = forwardRef((props: ImageProps, ref) => {
@@ -25,12 +26,15 @@ const Image = forwardRef((props: ImageProps, ref) => {
     width,
     height,
     src,
+    error,
     placeholder,
     crossOrigin,
     className,
     observerOptions = {},
     lazy = true,
     format = true,
+    onError,
+    onLoad,
     ...rest
   } = props
   const [source, setSource] = useState(placeholder || DEFAULT_SRC)
@@ -38,11 +42,13 @@ const Image = forwardRef((props: ImageProps, ref) => {
   const [loaded, setLoaded] = useState<boolean>(false)
   const imagerRef = useRef<Imager>(new Imager())
   const sourceRef = useRef<string>(src)
+  const onErrorRef = useLatest(onError)
+  const onLoadRef = useLatest(onLoad)
 
   const { observe, inView } = useInView<HTMLDivElement>({
     rootMargin: '20px',
     unobserveOnEnter: true,
-    ...observerOptions,
+    ...observerOptions
   })
 
   const setRef = (el: HTMLImageElement) => {
@@ -76,27 +82,41 @@ const Image = forwardRef((props: ImageProps, ref) => {
           () => {
             setThumbnail(thumbSource)
           },
-          crossOrigin,
+          crossOrigin
         )
       }
 
       imager.load(
         originSource,
-        () => {
+        (e) => {
           setThumbnail('')
-          setSource((prevSrc) => src || prevSrc)
+          setSource((prevSrc) => error || placeholder || prevSrc)
+          if (onErrorRef.current) onErrorRef.current(e)
         },
-        () => {
+        (e) => {
           setLoaded(true)
           setSource(originSource)
           sourceRef.current = src
+          if (onLoadRef.current) onLoadRef.current(e)
         },
-        crossOrigin,
+        crossOrigin
       )
     })
 
     return () => imager.unload()
-  }, [inView, crossOrigin, src, lazy, format, loaded, source, placeholder])
+  }, [
+    inView,
+    crossOrigin,
+    src,
+    lazy,
+    format,
+    loaded,
+    source,
+    placeholder,
+    onErrorRef,
+    onLoadRef,
+    error,
+  ])
 
   const filling = !!(width && height)
   const style = filling ? { paddingTop: `${(height / width) * 100}%` } : {}
@@ -112,7 +132,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
         position: 'relative',
         backgroundColor: 'transparent',
         overflow: 'hidden',
-        ...style,
+        ...style
       }}
       ref={setRef}
     >
@@ -124,7 +144,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
               ...imageStyle,
               '-webkit-filter': 'blur(20px)',
               filter: 'blur(20px)',
-              opacity: loaded ? 0 : 1,
+              opacity: loaded ? 0 : 1
             } as CSSProperties
           }
           crossOrigin={crossOrigin}
@@ -138,7 +158,7 @@ const Image = forwardRef((props: ImageProps, ref) => {
           {
             ...baseImageStyle,
             ...imageStyle,
-            opacity: loaded ? 1 : 0,
+            opacity: loaded ? 1 : 0
           } as CSSProperties
         }
         {...rest}
