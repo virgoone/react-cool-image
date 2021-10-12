@@ -8,14 +8,14 @@ const formatQuery: { [key: string]: Format } = {
     thumb: 'x-oss-process=image/resize,p_15',
     thumbWebp: 'x-oss-process=image/resize,p_15/format,webp',
     webp: 'x-oss-process=image/format,webp',
-    hasFormat: /^x-oss-process/
+    hasFormat: /^x-oss-process/,
   },
   qiniu: {
     thumb: 'imageMogr2/thumbnail/!15p',
     thumbWebp: 'imageMogr2/thumbnail/!15p/format/webp',
     webp: 'imageMogr2/format/webp',
-    hasFormat: /^(imageMogr2|imageView2)/
-  }
+    hasFormat: /^(imageMogr2|imageView2)/,
+  },
 }
 
 export function supportsWebp(cb: (isSupport?: boolean) => void): void {
@@ -55,7 +55,7 @@ export const setupType = (type: CDNType): void => {
 export const processImageFormat = (
   src: string,
   webp = true,
-  format: boolean | Format = true
+  format: boolean | Format = true,
 ): [string, string] => {
   const [base, qs] = src.split('?')
 
@@ -71,7 +71,7 @@ export const processImageFormat = (
     console.warn(
       '因已设置 %cformat,%c不再进行自动切换图片格式',
       'font-weight: bold;',
-      'font-weight: normal;'
+      'font-weight: normal;',
     )
     return [src, src]
   }

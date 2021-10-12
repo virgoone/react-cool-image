@@ -1,3 +1,9 @@
+# [0.3.0](https://github.com/virgoone/react-cool-image/compare/v0.2.3...v0.3.0) (2021-10-12)
+
+### Features
+
+- 增加自定义格式化参数和加载事件回调 ([#20](https://github.com/virgoone/react-cool-image/issues/20)) ([3ef6b52](https://github.com/virgoone/react-cool-image/commit/3ef6b5219109535692b3a932bb8dd2d597e14bef))
+
 ## [0.2.3](https://github.com/virgoone/react-cool-image/compare/v0.2.2...v0.2.3) (2021-10-09)
 
 ## [0.2.2](https://github.com/virgoone/react-cool-image/compare/0.2.0...v0.2.2) (2021-10-09)

@@ -32,18 +32,18 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 
 支持 **lazy-load**，**progressive image loading**（带虚化效果），如果浏览器支持 **webp**，会自动使用 **webp** 格式的图片。
 
-| Prop            | Type              | Default | Description                                                                                                                                                  |
-| --------------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `src`           | string            |         | 图片地址 It's `required`. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)       
-| `error`           | string            |         | 错误时显示图片的地址 <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                               |
-| `placeholder`   | string            |         | Placeholder image source. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                                    |
-| `webp`          | boolean           | true    | 是否使用 webp                                                                                                                                                |
-| `format`        | boolean \| [Format](#format)           | true    | 是否使用 **云存储** 格式化，为 `true` 时默认取全局 `CDN` 配置                                                                                                                                          |
-| `width`         | number            |         | 宽度 单位 **px**                                                                                                                                             |
-| `height`        | number            |         | 高度，单位 **px**                                                                                                                                            |
-| `lazy`          | boolean \| string | `true`  | Turn on/off lazy loading. <br />目前可选值 `boolean` ｜`thumb`                                                                                               |
-| observerOptions | object            | `{}`    | See the [ObserverOptions](#observerOptions) section.                                                                                                         |
-| `...`           |                   |         | Find more [props](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes) and [events](https://reactjs.org/docs/events.html#image-events). |
+| Prop            | Type                         | Default | Description                                                                                                                                                  |
+| --------------- | ---------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `src`           | string                       |         | 图片地址 It's `required`. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                                    |
+| `error`         | string                       |         | 错误时显示图片的地址 <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                                         |
+| `placeholder`   | string                       |         | Placeholder image source. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                                    |
+| `webp`          | boolean                      | true    | 是否使用 webp                                                                                                                                                |
+| `format`        | boolean \| [Format](#format) | true    | 是否使用 **云存储** 格式化，为 `true` 时默认取全局 `CDN` 配置                                                                                                |
+| `width`         | number                       |         | 宽度 单位 **px**                                                                                                                                             |
+| `height`        | number                       |         | 高度，单位 **px**                                                                                                                                            |
+| `lazy`          | boolean \| string            | `true`  | Turn on/off lazy loading. <br />目前可选值 `boolean` ｜`thumb`                                                                                               |
+| observerOptions | object                       | `{}`    | See the [ObserverOptions](#observerOptions) section.                                                                                                         |
+| `...`           |                              |         | Find more [props](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes) and [events](https://reactjs.org/docs/events.html#image-events). |
 
 ## Attention
 
