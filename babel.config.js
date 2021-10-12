@@ -5,29 +5,20 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        loose: true,
-      },
+        loose: true
+      }
     ],
     '@babel/preset-typescript',
-    [
-      '@babel/preset-react',
-      {
-        runtime: 'automatic',
-      },
-    ],
+    '@babel/preset-react'
   ]
-  const plugins = [
-    [
-      '@emotion',
-      {
-        // sourceMap is on by default but source maps are dead code eliminated in production
-        autoLabel: 'dev-only',
-        labelFormat: '[local]',
-      },
-    ],
-  ]
+  const plugins = []
   return {
     presets,
     plugins,
+    env: {
+      development: {
+        plugins: ['@emotion']
+      }
+    }
   }
 }

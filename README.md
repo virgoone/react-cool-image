@@ -34,10 +34,11 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 
 | Prop            | Type              | Default | Description                                                                                                                                                  |
 | --------------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `src`           | string            |         | 图片地址 It's `required`. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                                    |
+| `src`           | string            |         | 图片地址 It's `required`. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)       
+| `error`           | string            |         | 错误时显示图片的地址 <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                               |
 | `placeholder`   | string            |         | Placeholder image source. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                                    |
 | `webp`          | boolean           | true    | 是否使用 webp                                                                                                                                                |
-| `format`        | boolean           | true    | 是否使用 **CDN** 格式化                                                                                                                                      |
+| `format`        | boolean \| [Format](#format)           | true    | 是否使用 **云存储** 格式化，为 `true` 时默认取全局 `CDN` 配置                                                                                                                                          |
 | `width`         | number            |         | 宽度 单位 **px**                                                                                                                                             |
 | `height`        | number            |         | 高度，单位 **px**                                                                                                                                            |
 | `lazy`          | boolean \| string | `true`  | Turn on/off lazy loading. <br />目前可选值 `boolean` ｜`thumb`                                                                                               |
@@ -51,7 +52,17 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 - **width**，**height** 并不是图片最终的宽高。只是该组件用来计算 **placeholder** 宽高的基数。 计算公式为 宽 = 父元素的宽，高 = 宽 \* (height / width)
 - 如果 **lazy** 不为空，**width** 与 **height** 是建议设置的
 
-### observerOptions
+## Format
+
+云存储图片格式化参数，可覆盖默认全局 **CDN** 配置参数
+
+| 名称        | 类型   | 说明                                                                              | 默认值 |
+| ----------- | ------ | --------------------------------------------------------------------------------- | ------ |
+| `thumb`     | string | 缩略图格式化参数，示例：<br />`x-oss-process=image/resize,p_15`                   | -      |
+| `thumbWebp` | string | 缩略图 `webp` 格式参数，示例：<br />`x-oss-process=image/resize,p_15/format,webp` | -      |
+| `webp`      | string | 图片 `webp` 格式参数，示例：<br />`x-oss-process=image/format,webp`               | -      |
+
+## observerOptions
 
 默认值
 
