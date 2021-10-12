@@ -3,11 +3,11 @@ import { Options } from 'react-cool-inview'
 
 export type CDNType = 'ali' | 'qiniu' | ''
 
-export interface CDNFormat {
+export interface Format {
   thumb?: string
   thumbWebp?: string
-  formatWebp?: string
-  hasQuery?: RegExp
+  webp?: string
+  hasFormat?: RegExp
 }
 
 export interface ImageProps
@@ -17,12 +17,13 @@ export interface ImageProps
   > {
   src: string
   placeholder?: string
+  error?: string
   className?: string
   width?: number
   height?: number
-  format?: boolean
   webp?: boolean
   lazy?: boolean | 'thumb'
+  format?: boolean | Format
   observerOptions?: Options<HTMLDivElement>
   crossOrigin?: '' | 'anonymous' | 'use-credentials'
   onError?: (event: SyntheticEvent | Event) => void

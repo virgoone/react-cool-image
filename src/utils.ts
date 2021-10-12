@@ -1,21 +1,21 @@
-import { CDNType, CDNFormat } from './types'
+import { CDNType, Format } from './types'
 
 let support: boolean | undefined
 let cdn: CDNType = 'ali'
 
-const formatQuery: { [key: string]: CDNFormat } = {
+const formatQuery: { [key: string]: Format } = {
   ali: {
-    thumb: '?x-oss-process=image/resize,p_15',
-    thumbWebp: '?x-oss-process=image/resize,p_15/format,webp',
-    formatWebp: '?x-oss-process=image/format,webp',
-    hasQuery: /^x-oss-process/,
+    thumb: 'x-oss-process=image/resize,p_15',
+    thumbWebp: 'x-oss-process=image/resize,p_15/format,webp',
+    webp: 'x-oss-process=image/format,webp',
+    hasFormat: /^x-oss-process/
   },
   qiniu: {
-    thumb: '?imageMogr2/thumbnail/!15p',
-    thumbWebp: '?imageMogr2/thumbnail/!15p/format/webp',
-    formatWebp: '?imageMogr2/format/webp',
-    hasQuery: /^(imageMogr2|imageView2)/,
-  },
+    thumb: 'imageMogr2/thumbnail/!15p',
+    thumbWebp: 'imageMogr2/thumbnail/!15p/format/webp',
+    webp: 'imageMogr2/format/webp',
+    hasFormat: /^(imageMogr2|imageView2)/
+  }
 }
 
 export function supportsWebp(cb: (isSupport?: boolean) => void): void {
@@ -49,33 +49,36 @@ export const setupType = (type: CDNType): void => {
  * 处理文件格式，返回经 CDN 处理过的地址
  * @param src 图片地址
  * @param webp 是否使用 webp 格式
+ * @param format boolean ｜ Format
  * @returns [thumbSrc, originSrc]
  */
 export const processImageFormat = (
   src: string,
   webp = true,
-  process = true,
+  format: boolean | Format = true
 ): [string, string] => {
   const [base, qs] = src.split('?')
 
-  if (!cdn || !process) {
+  if (!cdn || !format) {
     return [src, src]
   }
+  const query = typeof format !== 'boolean' ? format : formatQuery[cdn]
 
-  const format = formatQuery[cdn]
-  const { hasQuery, thumb, thumbWebp, formatWebp } = format
-  const hasFormat = hasQuery?.test(qs)
+  const { hasFormat, thumb, thumbWebp, webp: formatWebp } = query
+  const isFormat = hasFormat?.test(qs)
 
-  if (hasFormat) {
+  if (isFormat) {
     console.warn(
-      '%c<Image /> %c组件会根据webp支持情况自动切换图片格式，因已设置format，不再进行切换',
+      '因已设置 %cformat,%c不再进行自动切换图片格式',
       'font-weight: bold;',
-      'font-weight: normal;',
+      'font-weight: normal;'
     )
     return [src, src]
   }
-  const thumbSrc = `${base}${webp ? thumbWebp : thumb}${qs ? `&${qs}` : ''}`
-  const originSrc = webp ? `${base}${formatWebp}${qs ? `&${qs}` : ''}` : src
+  const thumbSrc =
+    thumbWebp || thumb ? `${base}?${webp ? thumbWebp : thumb}` : src
+  const originSrc =
+    webp && formatWebp ? `${base}?${formatWebp}${qs ? `&${qs}` : ''}` : src
 
   return [thumbSrc, originSrc]
 }
