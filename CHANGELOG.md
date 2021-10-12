@@ -1,3 +1,9 @@
+## [0.3.1](https://github.com/virgoone/react-cool-image/compare/v0.3.0...v0.3.1) (2021-10-12)
+
+### Bug Fixes
+
+- 修复生产打包 react 错误 ([6fc0b7b](https://github.com/virgoone/react-cool-image/commit/6fc0b7b0ac2033a9e58ae2e47ceb28a82bfd5320))
+
 # [0.3.0](https://github.com/virgoone/react-cool-image/compare/v0.2.3...v0.3.0) (2021-10-12)
 
 ### Features
