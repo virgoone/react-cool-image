@@ -88,12 +88,12 @@ const Image = forwardRef((props: ImageProps, ref) => {
 
       imager.load(
         originSource,
-        () => {
+        (e) => {
           setThumbnail('')
           setSource((prevSrc) => error || placeholder || prevSrc)
           if (onErrorRef.current) onErrorRef.current(e)
         },
-        () => {
+        (e) => {
           setLoaded(true)
           setSource(originSource)
           sourceRef.current = src

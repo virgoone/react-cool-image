@@ -35,7 +35,7 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 | Prop            | Type              | Default | Description                                                                                                                                                  |
 | --------------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `src`           | string            |         | 图片地址 It's `required`. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)       
-| `error`           | string            |         | 错误时显示图片的地址 It's `required`. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                               |
+| `error`           | string            |         | 错误时显示图片的地址 <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                               |
 | `placeholder`   | string            |         | Placeholder image source. <br />[Support formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)                                    |
 | `webp`          | boolean           | true    | 是否使用 webp                                                                                                                                                |
 | `format`        | boolean \| [Format](#format)           | true    | 是否使用 **云存储** 格式化，为 `true` 时默认取全局 `CDN` 配置                                                                                                                                          |
