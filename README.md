@@ -54,13 +54,13 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 
 ## Format
 
-云存储图片格式化参数，可覆盖默认全局 **CDN** 配置参数
+云存储图片格式化参数，可覆盖默认全局 **CDN** 配置参数，默认阿里云**图片格式**配置
 
 | 名称        | 类型   | 说明                                                                              | 默认值 |
 | ----------- | ------ | --------------------------------------------------------------------------------- | ------ |
-| `thumb`     | string | 缩略图格式化参数，示例：<br />`x-oss-process=image/resize,p_15`                   | -      |
-| `thumbWebp` | string | 缩略图 `webp` 格式参数，示例：<br />`x-oss-process=image/resize,p_15/format,webp` | -      |
-| `webp`      | string | 图片 `webp` 格式参数，示例：<br />`x-oss-process=image/format,webp`               | -      |
+| `thumb`     | string | 缩略图格式化参数，示例：<br />`x-oss-process=image/resize,p_15`                   | `x-oss-process=image/resize,p_15`     |
+| `thumbWebp` | string | 缩略图 `webp` 格式参数，示例：<br />`x-oss-process=image/resize,p_15/format,webp` | `x-oss-process=image/resize,p_15/format,webp`      |
+| `webp`      | string | 图片 `webp` 格式参数，示例：<br />`x-oss-process=image/format,webp`               | `x-oss-process=image/format,webp`      |
 
 ## observerOptions
 
