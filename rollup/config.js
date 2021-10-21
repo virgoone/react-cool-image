@@ -32,7 +32,7 @@ const umd = {
   file: pkg.browser,
   format: 'umd',
   sourcemap: isDev,
-  name: 'Image',
+  name: 'ReactImage',
   globals: {
     react: 'React',
   },
