@@ -11,7 +11,7 @@
     transition: opacity 1s linear;
   }
 
-  .skeleton {
+  &-skeleton {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,12 +27,12 @@
       #fafafa
     );
     background-size: 400% 100%;
-    animation: skeleton_loading 3s ease-in-out infinite;
+    animation: skeleton 3s ease-in-out infinite;
     opacity: 1;
     transition: opacity 300ms ease-out;
   }
 
-  @keyframes skeleton_loading {
+  @keyframes skeleton {
     0% {
       background-position: 200% 0;
     }

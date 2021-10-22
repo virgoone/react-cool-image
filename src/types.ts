@@ -22,7 +22,7 @@ export interface ImageProps
   width?: number
   height?: number
   webp?: boolean
-  lazy?: boolean | 'thumb'
+  lazy?: boolean | 'thumb' | 'skeleton'
   format?: boolean | Format
   observerOptions?: Options<HTMLDivElement>
   crossOrigin?: '' | 'anonymous' | 'use-credentials'
