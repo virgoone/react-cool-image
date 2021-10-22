@@ -11,7 +11,6 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 import { terser } from 'rollup-plugin-terser'
 import copy from 'rollup-plugin-copy'
-
 import pkg from '../package.json'
 import template from './template'
 
@@ -64,6 +63,27 @@ const normalPlugins = !isDist
       }),
     ]
   : []
+const distPlugins = isDist
+  ? [
+      copy({
+        targets: [
+          {
+            src: 'src/react-cool-image.d.ts',
+            dest: pkg.types.split('/')[0],
+            rename: 'index.d.ts',
+          },
+        ],
+      }),
+      copy({
+        targets: [
+          {
+            src: 'src/style.scss',
+            dest: pkg.types.split('/')[0],
+          },
+        ],
+      }),
+    ]
+  : []
 
 const extensions = ['.js', '.ts', '.tsx', '.json']
 const plugins = [
@@ -91,16 +111,7 @@ const plugins = [
       targets: [{ src: '.dev', dest: '.', rename: 'build' }],
       hook: 'writeBundle',
     }),
-  isDist &&
-    copy({
-      targets: [
-        {
-          src: 'src/react-cool-image.d.ts',
-          dest: pkg.types.split('/')[0],
-          rename: 'index.d.ts',
-        },
-      ],
-    }),
+  ...distPlugins,
 ]
 
 export default {
