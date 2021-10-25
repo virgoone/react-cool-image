@@ -92,8 +92,9 @@ const extensions = ['.js', '.ts', '.tsx', '.json']
 const plugins = [
   resolve({ extensions }),
   commonjs(),
-  babel({ exclude: 'node_modules/**', extensions }),
+  babel({ exclude: 'node_modules/**', extensions, babelHelpers: 'bundled' }),
   replace({
+    preventAssignment: true,
     'process.env.NODE_ENV': JSON.stringify(
       isDev ? 'development' : 'production',
     ),

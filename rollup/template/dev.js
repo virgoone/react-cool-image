@@ -15,7 +15,6 @@ export default ({ files }) => `
       <div id="app"></div>
       <script defer src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js"></script>
       <script defer src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-      <script defer src="https://cdn.jsdelivr.net/npm/@geist-ui/react@2.2.0/dist/index.js"></script>
       
       <script defer type="text/javascript" src=${files.js[0].fileName}></script>
     </body>
