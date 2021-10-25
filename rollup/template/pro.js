@@ -10,13 +10,18 @@ export default ({ files }) => `
       <title>React Cool Image</title>
       <meta name="keyword" content="lazy-loading,React Cool Image,图片组件,React,动画友好,Image,懒加载,骨骼动画">
       <meta name="description" content="一个动画特别特别友好的图片懒加载组件">
+      <link rel="preload" href="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js" as="script" crossorigin>
+      <link rel="preload" href="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js" as="script" crossorigin>
       <!-- Cloudflare Web Analytics -->
       <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "222937dee8e34dc59a51f45a43bc9254"}'></script>
       <!-- End Cloudflare Web Analytics -->
     </head>
     <body>
       <div id="app"></div>
-      <script type="text/javascript" src=${files.js[0].fileName}></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/@geist-ui/react@2.2.0/dist/index.min.js"></script>
+      <script defer type="text/javascript" src=${files.js[0].fileName}></script>
     </body>
   </html>
 `

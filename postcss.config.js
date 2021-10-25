@@ -9,13 +9,6 @@ module.exports = {
       browsers: 'last 2 versions',
       stage: 3,
     }),
-    require('cssnano')({
-      preset: [
-        'default',
-        {
-          mergeLonghand: false,
-        },
-      ],
-    }),
+    require('cssnano'),
   ],
 }

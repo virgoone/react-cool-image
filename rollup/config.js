@@ -12,9 +12,15 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { terser } from 'rollup-plugin-terser'
 import copy from 'rollup-plugin-copy'
 import pkg from '../package.json'
-import template from './template'
+import templateDev from './template/dev'
+import templatePro from './template/pro'
 
 const { BUILD } = process.env
+
+const globals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+}
 const isDev = BUILD === 'dev'
 const isDemo = BUILD === 'demo'
 const isDist = BUILD === 'dist'
@@ -24,6 +30,7 @@ const cjs = {
   format: 'cjs',
   sourcemap: isDev,
   exports: 'named',
+  globals,
   plugins: !isDev && [terser()],
 }
 
@@ -32,9 +39,7 @@ const umd = {
   format: 'umd',
   sourcemap: isDev,
   name: 'ReactImage',
-  globals: {
-    react: 'React',
-  },
+  globals,
   plugins: !isDev && [terser()],
 }
 
@@ -42,16 +47,14 @@ const esm = {
   file: pkg.module,
   format: 'esm',
   exports: 'named',
-  globals: {
-    react: 'React',
-  },
+  globals,
 }
 const devPlugins = !isDev ? [] : [serve('.dev'), livereload()]
 const normalPlugins = !isDist
   ? [
       url(),
       postcss({ extract: true, sourceMap: isDev, minimize: !isDev }),
-      html({ template }),
+      html({ template: isDemo ? templatePro : templateDev }),
       copy({
         targets: [
           {
@@ -113,7 +116,6 @@ const plugins = [
     }),
   ...distPlugins,
 ]
-
 export default {
   input: isDist ? 'src' : 'demo',
   output: isDist ? [cjs, esm, umd] : [cjs],
