@@ -1411,10 +1411,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@lark-org/lark-cli-service@^2.0.0-beta.4":
-  version "2.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@lark-org/lark-cli-service/-/lark-cli-service-2.0.0-beta.4.tgz#fe61e1f1c94b48ecb2bf1635a72a84d2815a3b27"
-  integrity sha512-QYB9XhV8mVFrzRQwnP/y+X3xbhoRJXKT7op+AMrbWXoqd8KBIAFPUSALTfpL7/AZ9D5luLkZIaEDFqI0sKZa1g==
+"@lark-org/lark-cli-service@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@lark-org/lark-cli-service/-/lark-cli-service-2.0.0.tgz#5ee7be7ab137463eb5f006e1422e26b93e223c6a"
+  integrity sha512-U4jW4fAZ9LAfdbMD0ozXEsqRM9WDtew0znzQJQcBjkbwGzw4SE6bDN4lnJxPC0HtEtacCD75qDMV3tbFfbTAhA==
   dependencies:
     "@babel/cli" "^7.15.7"
     "@babel/core" "^7.15.8"
