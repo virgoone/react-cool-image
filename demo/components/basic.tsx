@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Image from '../../src'
+import { Image } from '../../src'
 import { CardClass, ContainerClass } from './style'
 
 const BasicExample: FC = () => (
