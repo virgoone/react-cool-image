@@ -80,6 +80,8 @@ const App: FC = () => {
                 width="400px"
                 text={[
                   `import Image from 'react-cool-image'`,
+                  `import 'react-cool-image/dist/style.less'`,
+                  ``,
                   'const App = () => <Image width={300} height={100} src="https://xxx.png" />',
                 ]}
               />

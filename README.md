@@ -24,8 +24,27 @@ $ npm install --save react-cool-image
 
 ```js
 import Image from 'react-cool-image'
+import 'react-cool-image/dist/style.less'
+// or
+// import 'react-cool-image/dist/style.css'
 
 const App = () => <Image width={300} height={100} src="https://xxx.png" />
+```
+
+## 通过 CDN 使用
+
+除了可以通过 `npm` 安装之外，你也可以直接使用 `CDN` 资源，`react-cool-image` 页提供了 umd 格式的代码产物。
+
+```html
+<link
+  href="https://cdn.jsdelivr.net/npm/react-cool-image@0.4.0/dist/style.css"
+/>
+```
+
+注：`css` 在 `0.4.0` 版本提供，`0.4.0` 以下使用 `inline style`
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/react-cool-image@0.4.0/dist/index.umd.js"></script>
 ```
 
 ## API
@@ -41,7 +60,7 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 | `format`        | boolean \| [Format](#format) | true    | 是否使用 **云存储** 格式化，为 `true` 时默认取全局 `CDN` 配置                                                                                                |
 | `width`         | number                       |         | 宽度 单位 **px**                                                                                                                                             |
 | `height`        | number                       |         | 高度，单位 **px**                                                                                                                                            |
-| `lazy`          | boolean \| string            | `true`  | Turn on/off lazy loading. <br />目前可选值 `boolean` ｜`thumb`                                                                                               |
+| `lazy`          | boolean \| string            | `true`  | Turn on/off lazy loading. <br />目前可选值 `boolean` ｜`thumb` ｜`skeleton`                                                                                  |
 | observerOptions | object                       | `{}`    | See the [ObserverOptions](#observerOptions) section.                                                                                                         |
 | `...`           |                              |         | Find more [props](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes) and [events](https://reactjs.org/docs/events.html#image-events). |
 
@@ -56,11 +75,11 @@ const App = () => <Image width={300} height={100} src="https://xxx.png" />
 
 云存储图片格式化参数，可覆盖默认全局 **CDN** 配置参数，默认阿里云**图片格式**配置
 
-| 名称        | 类型   | 说明                                                                              | 默认值 |
-| ----------- | ------ | --------------------------------------------------------------------------------- | ------ |
-| `thumb`     | string | 缩略图格式化参数，示例：<br />`x-oss-process=image/resize,p_15`                   | `x-oss-process=image/resize,p_15`     |
-| `thumbWebp` | string | 缩略图 `webp` 格式参数，示例：<br />`x-oss-process=image/resize,p_15/format,webp` | `x-oss-process=image/resize,p_15/format,webp`      |
-| `webp`      | string | 图片 `webp` 格式参数，示例：<br />`x-oss-process=image/format,webp`               | `x-oss-process=image/format,webp`      |
+| 名称        | 类型   | 说明                                                                              | 默认值                                        |
+| ----------- | ------ | --------------------------------------------------------------------------------- | --------------------------------------------- |
+| `thumb`     | string | 缩略图格式化参数，示例：<br />`x-oss-process=image/resize,p_15`                   | `x-oss-process=image/resize,p_15`             |
+| `thumbWebp` | string | 缩略图 `webp` 格式参数，示例：<br />`x-oss-process=image/resize,p_15/format,webp` | `x-oss-process=image/resize,p_15/format,webp` |
+| `webp`      | string | 图片 `webp` 格式参数，示例：<br />`x-oss-process=image/format,webp`               | `x-oss-process=image/format,webp`             |
 
 ## observerOptions
 
