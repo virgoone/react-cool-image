@@ -11,6 +11,7 @@ import {
   Tabs,
   Snippet,
   Card,
+  Link,
 } from '@geist-ui/react'
 import { ContentClass, LogoClass } from './components/style'
 
@@ -40,6 +41,21 @@ const App: FC = () => {
             </Text>
             <Text p b>
               动画友好的图片组件，支持懒加载、默认图片显示、错误回退
+              <Spacer w={0.5} />
+              <Link
+                href="https://github.com/virgoone/react-cool-image"
+                target="_blank"
+                icon
+              >
+                Github
+              </Link>
+              <Link
+                href="https://www.npmjs.com/package/react-cool-image"
+                target="_blank"
+                icon
+              >
+                Npm
+              </Link>
             </Text>
           </Grid>
           <Spacer h={1} />
@@ -62,7 +78,10 @@ const App: FC = () => {
               <Spacer h={0.8} />
               <Snippet
                 width="400px"
-                text={`import Image from 'react-cool-image'`}
+                text={[
+                  `import Image from 'react-cool-image'`,
+                  'const App = () => <Image width={300} height={100} src="https://xxx.png" />',
+                ]}
               />
               <Spacer h={2} />
               <Dot type="success" /> 3. 效果展示
