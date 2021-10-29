@@ -34,7 +34,7 @@
     "lint:type": "tsc",
     "lint:format": "prettier -w . -u",
     "lint:code": "eslint --fix . --ext .js,.ts,.tsx",
-    "lint:style": "stylelint --fix \"**/*.{css,ts,tsx}\"",
+    "lint:style": "stylelint --fix \"**/*.{css,less}\"",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "test:cov": "yarn clean:cov && yarn test --coverage",
