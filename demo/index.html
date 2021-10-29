@@ -19,6 +19,12 @@
       content="lazy-loading,React Cool Image,图片组件,React,动画友好,Image,懒加载,骨骼动画"
     />
     <meta name="description" content="一个动画特别特别友好的图片懒加载组件" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
     <% if (APP_ENV === 'production') { %>
     <link
       rel="preload"
@@ -32,7 +38,6 @@
       as="script"
       crossorigin
     />
-    <% } %>
     <!-- Cloudflare Web Analytics -->
     <script
       defer
@@ -40,6 +45,7 @@
       data-cf-beacon='{"token": "222937dee8e34dc59a51f45a43bc9254"}'
     ></script>
     <!-- End Cloudflare Web Analytics -->
+    <% } %>
   </head>
 
   <body>
