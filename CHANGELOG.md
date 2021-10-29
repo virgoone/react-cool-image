@@ -1,3 +1,13 @@
+# [0.4.0](https://github.com/virgoone/react-cool-image/compare/v0.3.1...v0.4.0) (2021-10-29)
+
+### Bug Fixes
+
+- stylelintrc update ([ad0ce6c](https://github.com/virgoone/react-cool-image/commit/ad0ce6c0b26c5673b008c05e73b803d7b0f3a47a))
+
+### Features
+
+- 样式修改外部引用和增加骨架屏动画效果 ([#28](https://github.com/virgoone/react-cool-image/issues/28)) ([9d64327](https://github.com/virgoone/react-cool-image/commit/9d6432748a6744213d39d19fe78cdc7334c3a91d))
+
 ## [0.3.1](https://github.com/virgoone/react-cool-image/compare/v0.3.0...v0.3.1) (2021-10-12)
 
 ### Bug Fixes
