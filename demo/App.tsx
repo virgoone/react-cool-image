@@ -45,6 +45,7 @@ const App: FC = () => {
               <Link
                 href="https://github.com/virgoone/react-cool-image"
                 target="_blank"
+                onClick={() => window?.gtag?.('event', 'go_to_github')}
                 icon
               >
                 Github
@@ -52,6 +53,7 @@ const App: FC = () => {
               <Link
                 href="https://www.npmjs.com/package/react-cool-image"
                 target="_blank"
+                onClick={() => window?.gtag?.('event', 'go_to_npm')}
                 icon
               >
                 Npm

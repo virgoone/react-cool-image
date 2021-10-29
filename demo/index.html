@@ -38,13 +38,21 @@
       as="script"
       crossorigin
     />
-    <!-- Cloudflare Web Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "222937dee8e34dc59a51f45a43bc9254"}'
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ELFDZHC2SJ"
     ></script>
-    <!-- End Cloudflare Web Analytics -->
+    <script>
+      window.dataLayer = window.dataLayer || []
+
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'G-ELFDZHC2SJ')
+    </script>
     <% } %>
   </head>
 
