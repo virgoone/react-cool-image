@@ -2,110 +2,83 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import replace from '@rollup/plugin-replace'
-import url from '@rollup/plugin-url'
-import postcss from 'rollup-plugin-postcss'
-import html from '@rollup/plugin-html'
-import serve from 'rollup-plugin-serve'
-import livereload from 'rollup-plugin-livereload'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 import { terser } from 'rollup-plugin-terser'
 import copy from 'rollup-plugin-copy'
-
 import pkg from '../package.json'
-import template from './template'
 
-const { BUILD } = process.env
-const isDev = BUILD === 'dev'
-const isDemo = BUILD === 'demo'
-const isDist = BUILD === 'dist'
-
+const globals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+}
 const cjs = {
-  file: isDist ? pkg.main : '.dev/bundle.js',
+  file: pkg.main,
   format: 'cjs',
-  sourcemap: isDev,
+  sourcemap: false,
   exports: 'named',
-  plugins: !isDev && [terser()],
+  globals,
+  plugins: [terser()],
 }
 
 const umd = {
   file: pkg.browser,
   format: 'umd',
-  sourcemap: isDev,
-  name: 'Image',
-  globals: {
-    react: 'React',
-  },
-  plugins: !isDev && [terser()],
+  sourcemap: false,
+  name: 'ReactImage',
+  globals,
+  plugins: [terser()],
 }
 
 const esm = {
   file: pkg.module,
   format: 'esm',
   exports: 'named',
-  globals: {
-    react: 'React',
-  },
+  globals,
 }
-const devPlugins = !isDev ? [] : [serve('.dev'), livereload()]
-const normalPlugins = !isDist
-  ? [
-      url(),
-      postcss({ extract: true, sourceMap: isDev, minimize: !isDev }),
-      html({ template }),
-      copy({
-        targets: [
-          {
-            src: 'demo/assets',
-            dest: '.dev',
-            rename: 'assets',
-          },
-        ],
-      }),
-    ]
-  : []
 
 const extensions = ['.js', '.ts', '.tsx', '.json']
 const plugins = [
   resolve({ extensions }),
   commonjs(),
-  babel({ exclude: 'node_modules/**', extensions }),
+  babel({
+    exclude: 'node_modules/**',
+    extensions,
+    babelHelpers: 'bundled',
+  }),
   replace({
-    'process.env.NODE_ENV': JSON.stringify(
-      isDev ? 'development' : 'production',
-    ),
+    preventAssignment: true,
+    'process.env.NODE_ENV': JSON.stringify('production'),
     VERSION: pkg.version,
     NAME: pkg.name,
   }),
-  ...normalPlugins,
-  ...devPlugins,
-  !isDev &&
-    visualizer({
-      json: true,
-      gzipSize: true,
-      brotliSize: true,
-      filename: '.stats.json',
-    }),
-  isDemo &&
-    copy({
-      targets: [{ src: '.dev', dest: '.', rename: 'build' }],
-      hook: 'writeBundle',
-    }),
-  isDist &&
-    copy({
-      targets: [
-        {
-          src: 'src/react-cool-image.d.ts',
-          dest: pkg.types.split('/')[0],
-          rename: 'index.d.ts',
-        },
-      ],
-    }),
+  visualizer({
+    json: true,
+    gzipSize: true,
+    brotliSize: true,
+    filename: '.stats.json',
+  }),
+  copy({
+    targets: [
+      {
+        src: 'src/react-cool-image.d.ts',
+        dest: pkg.types.split('/')[0],
+        rename: 'index.d.ts',
+      },
+    ],
+  }),
+  copy({
+    targets: [
+      {
+        src: 'src/style.scss',
+        dest: pkg.types.split('/')[0],
+      },
+    ],
+  }),
 ]
-
 export default {
-  input: isDist ? 'src' : 'demo',
-  output: isDist ? [cjs, esm, umd] : [cjs],
+  input: 'src',
+  output: [cjs, esm, umd],
   plugins: plugins.filter(Boolean),
-  external: isDist ? Object.keys(pkg.peerDependencies) : [],
+  external: Object.keys(pkg.peerDependencies),
 }

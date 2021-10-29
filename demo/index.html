@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link
+      rel="preconnect"
+      crossorigin
+      href="https://dounione.oss-cn-shanghai.aliyuncs.com"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <title>React Cool Image</title>
+    <meta
+      name="keyword"
+      content="lazy-loading,React Cool Image,图片组件,React,动画友好,Image,懒加载,骨骼动画"
+    />
+    <meta name="description" content="一个动画特别特别友好的图片懒加载组件" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <% if (APP_ENV === 'production') { %>
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js"
+      as="script"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
+      as="script"
+      crossorigin
+    />
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "222937dee8e34dc59a51f45a43bc9254"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+    <% } %>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <noscript>Sorry, we need js to run correctly!</noscript>
+    <script
+      crossorigin
+      src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CIntersectionObserver"
+    ></script>
+
+    <% if(APP_ENV === 'production') { %>
+    <script
+      crossorigin
+      src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
+    ></script>
+    <% } %>
+  </body>
+</html>

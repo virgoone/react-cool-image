@@ -1,20 +1,17 @@
-module.exports = function (api) {
+module.exports = (api) => {
   api.cache(true)
 
-  const presets = [
-    [
-      '@babel/preset-env',
-      {
-        loose: true,
-      },
-    ],
-    '@babel/preset-typescript',
-    '@babel/preset-react',
-  ]
-  const plugins = []
   return {
-    presets,
-    plugins,
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          loose: true,
+        },
+      ],
+      '@babel/preset-typescript',
+      '@babel/preset-react',
+    ],
     env: {
       development: {
         plugins: ['@emotion'],
