@@ -24,7 +24,7 @@ $ npm install --save react-cool-image
 
 ```js
 import Image from 'react-cool-image'
-import 'react-cool-image/dist/style.less'
+import 'react-cool-image/dist/style.scss'
 // or
 // import 'react-cool-image/dist/style.css'
 
