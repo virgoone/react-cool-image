@@ -6,7 +6,7 @@
   img {
     width: 100%;
     display: block;
-    opacity: 0;
+    opacity: 0%;
     position: static;
     transition: opacity 1s linear;
   }
@@ -28,7 +28,7 @@
     );
     background-size: 400% 100%;
     animation: skeleton 3s ease-in-out infinite;
-    opacity: 1;
+    opacity: 100%;
     transition: opacity 300ms ease-out;
   }
 
@@ -52,14 +52,14 @@
 
   &.loaded {
     img {
-      opacity: 1;
+      opacity: 100%;
     }
   }
 
   &.thumb {
     img {
       filter: blur(20px);
-      opacity: 1;
+      opacity: 100%;
     }
   }
 }

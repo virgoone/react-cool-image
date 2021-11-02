@@ -1,3 +1,12 @@
+## [0.4.1](https://github.com/virgoone/react-cool-image/compare/v0.4.0...v0.4.1) (2021-11-02)
+
+### Bug Fixes
+
+- 升级文档构建依赖 ([f8d177f](https://github.com/virgoone/react-cool-image/commit/f8d177f9041d7e639211fb8e87513eec2e09ed9f))
+- 修复文件书写错误 ([e0726d1](https://github.com/virgoone/react-cool-image/commit/e0726d162e7d3cbfc23dcb82e17788bfa68eb3eb))
+- 修改 analytics ([a4a6889](https://github.com/virgoone/react-cool-image/commit/a4a688957652cbf5f5e034c6a9c1009ab9b5016b))
+- lint ci error ([65b4dd8](https://github.com/virgoone/react-cool-image/commit/65b4dd88f955b023f74565d7d5a735391e4f2fdb))
+
 # [0.4.0](https://github.com/virgoone/react-cool-image/compare/v0.3.1...v0.4.0) (2021-10-29)
 
 ### Bug Fixes
