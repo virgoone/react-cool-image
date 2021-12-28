@@ -1,6 +1,6 @@
 {
   "name": "react-cool-image",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "一个可懒加载，动画友好的图片组件",
   "author": "virgoone<me@virgo.one>",
   "main": "dist/index.js",
