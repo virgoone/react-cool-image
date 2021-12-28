@@ -40,13 +40,12 @@ jobs:
         run: yarn lint
       - name: 测试
         run: yarn test:cov
-      - name: 构建
-        run: yarn build
-
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: 构建
+        run: yarn build
   release:
     name: Release
     runs-on: ubuntu-latest
