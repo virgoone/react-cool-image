@@ -24,6 +24,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:virgoone/react-cool-image.git"
+  },
   "scripts": {
     "dev": "yarn clean:dev && lark-cli-service start -p 10001",
     "build": "yarn clean && concurrently yarn:build:*",
@@ -44,7 +48,6 @@
     "clean:demo": "rimraf build",
     "clean:dist": "rimraf dist .stats.json",
     "clean:cov": "rimraf coverage",
-    "release": "release-it",
     "preversion": "yarn lint",
     "prepare": "husky install"
   },
@@ -63,7 +66,6 @@
     "@emotion/react": "^11.5.0",
     "@geist-ui/react": "^2.2.0",
     "@lark-org/lark-cli-service": "^2.0.2",
-    "@release-it/conventional-changelog": "^3.3.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
@@ -89,7 +91,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-test-renderer": "^17.0.2",
-    "release-it": "^14.11.6",
     "rimraf": "^3.0.2",
     "rollup": "^2.51.1",
     "rollup-plugin-copy": "^3.4.0",
