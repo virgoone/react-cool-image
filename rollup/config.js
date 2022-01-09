@@ -45,6 +45,7 @@ const plugins = [
     exclude: 'node_modules/**',
     extensions,
     babelHelpers: 'bundled',
+    configFile: false,
     presets: [
       [
         '@babel/preset-env',
