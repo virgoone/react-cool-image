@@ -12,25 +12,9 @@ module.exports = {
   paths: {
     appIndex: resolve('./demo/index.tsx'),
     // 可选，默认值 ./src
-    appSrc: resolve('./demo'),
+    appSrc: resolve('./'),
     // 可选，默认值 ./dist
     appBuild: resolve('./build'),
     appHtml: resolve('./demo/index.html'),
-  },
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: /\.(js|jsx|ts|tsx)$/,
-          include: [resolve('./demo'), resolve('./src')],
-          loader: require.resolve('babel-loader'),
-          options: {
-            cacheDirectory: false,
-            highlightCode: true,
-            configFile: require.resolve('./babel.config.js'),
-          },
-        },
-      ],
-    },
   },
 }

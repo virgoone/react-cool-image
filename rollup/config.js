@@ -45,6 +45,16 @@ const plugins = [
     exclude: 'node_modules/**',
     extensions,
     babelHelpers: 'bundled',
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          loose: true,
+        },
+      ],
+      '@babel/preset-typescript',
+      '@babel/preset-react',
+    ],
   }),
   replace({
     preventAssignment: true,
