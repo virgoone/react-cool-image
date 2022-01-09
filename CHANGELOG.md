@@ -1,14 +1,12 @@
 # [0.5.0](https://github.com/virgoone/react-cool-image/compare/v0.4.1...v0.5.0) (2021-12-28)
 
-
 ### Bug Fixes
 
-* polyfill source update ([3833b83](https://github.com/virgoone/react-cool-image/commit/3833b83aee5e548b6d5d94d42208483d32479e5a))
-
+- polyfill source update ([3833b83](https://github.com/virgoone/react-cool-image/commit/3833b83aee5e548b6d5d94d42208483d32479e5a))
 
 ### Features
 
-* 🎸 release action 修改为 auto ([da02246](https://github.com/virgoone/react-cool-image/commit/da022460fcdb38aa39784fc103aae7a7fb13077d))
+- 🎸 release action 修改为 auto ([da02246](https://github.com/virgoone/react-cool-image/commit/da022460fcdb38aa39784fc103aae7a7fb13077d))
 
 ## [0.4.1](https://github.com/virgoone/react-cool-image/compare/v0.4.0...v0.4.1) (2021-11-02)
 
