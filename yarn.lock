@@ -1436,9 +1436,9 @@
     chalk "^4.0.0"
 
 "@lark-org/lark-cli-service@^2.0.2":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@lark-org/lark-cli-service/-/lark-cli-service-2.3.1.tgz#2496b183a6b7c60ea12be58ad85bdc3a78915e92"
-  integrity sha512-Q1mucH+jj8LKBfavhnN/184agRN4SuM7ez/fEMX7v1EGXfyXpl26+GNFpS3isxAj/cG3i7ufxTCWmqYWfQl5dQ==
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@lark-org/lark-cli-service/-/lark-cli-service-2.3.2.tgz#ecd5e0111d885eb24d20fb280669e954c460f814"
+  integrity sha512-H/LH/P2oKObgm3aFExbibaTJ5pkfdG50lHQKY0dZ867gkBiaZZZdGyQEfZheLCT2axKQt/HqQKHyNdWQ7psTgw==
   dependencies:
     "@babel/cli" "^7.16.7"
     "@babel/core" "^7.16.7"
