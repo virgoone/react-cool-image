@@ -1,3 +1,11 @@
+## [0.5.1](https://github.com/virgoone/react-cool-image/compare/v0.5.0...v0.5.1) (2022-01-09)
+
+
+### Bug Fixes
+
+* 🐛 解决demo构建问题和配置问题 ([11790e0](https://github.com/virgoone/react-cool-image/commit/11790e03bd1e8d1ca97575b2bc35265401112ecf))
+* rollup babel config ([6f8c0b6](https://github.com/virgoone/react-cool-image/commit/6f8c0b6aaf9ee8309d1a15afc20e8820b9543c76))
+
 # [0.5.0](https://github.com/virgoone/react-cool-image/compare/v0.4.1...v0.5.0) (2021-12-28)
 
 ### Bug Fixes
