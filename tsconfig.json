@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "es2015",
+    "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "react",
     // Specify module resolution strategy: "node" (Node.js) or "classic" (TypeScript pre-1.6)
