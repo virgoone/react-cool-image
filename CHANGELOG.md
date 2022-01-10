@@ -1,3 +1,15 @@
+## [0.5.2](https://github.com/virgoone/react-cool-image/compare/v0.5.1...v0.5.2) (2022-01-10)
+
+
+### Bug Fixes
+
+* 🐛 demo 访问出错问题 ([8309c94](https://github.com/virgoone/react-cool-image/commit/8309c94b57137139ef771d4db8dd025bed5c1b58))
+
+
+### Performance Improvements
+
+* add perf ([51fe1b3](https://github.com/virgoone/react-cool-image/commit/51fe1b314330e178be5b6c57cada161615d90384))
+
 ## [0.5.1](https://github.com/virgoone/react-cool-image/compare/v0.5.0...v0.5.1) (2022-01-09)
 
 
