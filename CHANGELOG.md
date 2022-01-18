@@ -1,22 +1,25 @@
-## [0.5.2](https://github.com/virgoone/react-cool-image/compare/v0.5.1...v0.5.2) (2022-01-10)
-
+## [0.5.3](https://github.com/virgoone/react-cool-image/compare/v0.5.2...v0.5.3) (2022-01-18)
 
 ### Bug Fixes
 
-* 🐛 demo 访问出错问题 ([8309c94](https://github.com/virgoone/react-cool-image/commit/8309c94b57137139ef771d4db8dd025bed5c1b58))
+- 解决发布 package 时未构建问题 ([c2b5d38](https://github.com/virgoone/react-cool-image/commit/c2b5d38d963356e0f7919eeac22ab237d7fb9e3c))
 
+## [0.5.2](https://github.com/virgoone/react-cool-image/compare/v0.5.1...v0.5.2) (2022-01-10)
+
+### Bug Fixes
+
+- 🐛 demo 访问出错问题 ([8309c94](https://github.com/virgoone/react-cool-image/commit/8309c94b57137139ef771d4db8dd025bed5c1b58))
 
 ### Performance Improvements
 
-* add perf ([51fe1b3](https://github.com/virgoone/react-cool-image/commit/51fe1b314330e178be5b6c57cada161615d90384))
+- add perf ([51fe1b3](https://github.com/virgoone/react-cool-image/commit/51fe1b314330e178be5b6c57cada161615d90384))
 
 ## [0.5.1](https://github.com/virgoone/react-cool-image/compare/v0.5.0...v0.5.1) (2022-01-09)
 
-
 ### Bug Fixes
 
-* 🐛 解决demo构建问题和配置问题 ([11790e0](https://github.com/virgoone/react-cool-image/commit/11790e03bd1e8d1ca97575b2bc35265401112ecf))
-* rollup babel config ([6f8c0b6](https://github.com/virgoone/react-cool-image/commit/6f8c0b6aaf9ee8309d1a15afc20e8820b9543c76))
+- 🐛 解决 demo 构建问题和配置问题 ([11790e0](https://github.com/virgoone/react-cool-image/commit/11790e03bd1e8d1ca97575b2bc35265401112ecf))
+- rollup babel config ([6f8c0b6](https://github.com/virgoone/react-cool-image/commit/6f8c0b6aaf9ee8309d1a15afc20e8820b9543c76))
 
 # [0.5.0](https://github.com/virgoone/react-cool-image/compare/v0.4.1...v0.5.0) (2021-12-28)
 
