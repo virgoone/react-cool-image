@@ -71,7 +71,7 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@rollup/plugin-url": "^6.0.0",
-    "@testing-library/react-hooks": "^7.0.0",
+    "@testing-library/react-hooks": "^8.0.0",
     "@types/gtag.js": "^0.0.10",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.26",
